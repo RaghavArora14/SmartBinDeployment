@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffffff; /* Light mode */
+            color: #000000; /* Text color */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Result</h1>
+    <div class="container">
+        <img src="data:image/png;base64,{{ image_data }}" alt="Uploaded Image">
+        <p class="result">Type of Waste: <span>{{ classification }}</span></p>
+        <a href="/" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>

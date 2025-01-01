@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dustbin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles for the Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            transition: width 0.5s ease;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+
+        /* Color styles for different fill levels */
+        .low { background-color: blue; }
+        .medium { background-color:orange; color: black; }
+        .high { background-color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Smart Dustbin System</h1>
+
+        <!-- Add other sections of your homepage here -->
+
+        <!-- Bin Capacity Section -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3>Current Bin Capacity</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Biodegradable Bin:</strong></p>
+                <div class="progress-container">
+                    <div class="progress-bar 
+                        {% if bin_data['bio_fill_level'] < 70 %}low{% elif bin_data['bio_fill_level'] < 90 %}medium{% else %}high{% endif %}" 
+                        style="width: {{ bin_data['bio_fill_level'] }}%;">
+                        {{ bin_data['bio_fill_level'] }}%
+                    </div>
+                </div>
+
+                <p><strong>Non-Biodegradable Bin:</strong></p>
+                <div class="progress-container">
+                    <div class="progress-bar 
+                        {% if bin_data['non_bio_fill_level'] < 70 %}low{% elif bin_data['non_bio_fill_level'] < 90 %}medium{% else %}high{% endif %}" 
+                        style="width: {{ bin_data['non_bio_fill_level'] }}%;">
+                        {{ bin_data['non_bio_fill_level'] }}%
+                    </div>
+                </div>
+
+                <p><strong>Last Updated:</strong> {{ bin_data['timestamp'] }}</p>
+            </div>
+        </div>
+
+        <!-- More sections below -->
+    </div>
+</body>
+</html>
