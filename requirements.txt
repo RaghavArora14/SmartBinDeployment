@@ -3,6 +3,6 @@ tensorflow
 numpy
 pillow
 matplotlib
-sqlite3
+db-sqlite3
 werkzeug
 opencv-python
