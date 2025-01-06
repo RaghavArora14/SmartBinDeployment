@@ -1,5 +1,8 @@
-flask
+Flask
 tensorflow
 numpy
-werkzeug
+pillow
 matplotlib
+sqlite3
+werkzeug
+opencv-python
